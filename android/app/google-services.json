@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "290395395715",
+    "project_id": "alemano-935ca",
+    "storage_bucket": "alemano-935ca.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:290395395715:android:4cd5df34a1fe64ab972db6",
+        "android_client_info": {
+          "package_name": "com.example.alemano"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC81zkRR_IcmhqsHZzobxcImPOZqoxw5Lk"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

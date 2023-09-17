@@ -1,4 +1,7 @@
 import 'dart:io';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
+import 'package:firebase_storage/firebase_storage.dart';
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hexcolor/hexcolor.dart';
@@ -16,7 +19,6 @@ class ClickPicture extends StatefulWidget {
 
 class _ClickPictureState extends State<ClickPicture> {
   File? selectedImage;
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -123,6 +125,10 @@ class _ClickPictureState extends State<ClickPicture> {
                         selectedImage != null
                             ? InkWell(
                                 onTap: () {
+                                  final path = 'files/${selectedImage!.absolute}';
+                                  final file = File(selectedImage!.path);
+                                  final ref = FirebaseStorage.instance.ref().child(path);
+                                  ref.putFile(file);
                                   Navigator.push(
                                     context,
                                     MaterialPageRoute(
