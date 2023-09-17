@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:hexcolor/hexcolor.dart';
 import 'package:image_picker/image_picker.dart';
+import 'package:awesome_notifications/awesome_notifications.dart';
 
 import 'message.dart';
 
@@ -157,6 +158,15 @@ class _ClickPictureState extends State<ClickPicture> {
         await ImagePicker().pickImage(source: ImageSource.camera);
     setState(() {
       selectedImage = File(returnedImage!.path);
+      AwesomeNotifications().createNotification(
+          content: NotificationContent(
+              id: 10,
+              channelKey: 'basic_channel',
+              title: 'Image Uploaded ',
+              body: 'Thank you for sharing food with me',
+              actionType: ActionType.Default
+          )
+      );
     });
   }
 }

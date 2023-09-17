@@ -38,6 +38,7 @@ dependencies:
   google_fonts: ^5.1.0
   hexcolor: ^3.0.1
   image_picker: ^1.0.4
+  awesome_notifications: ^0.7.4+1
 
 dev_dependencies:
   flutter_test:
